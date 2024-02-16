@@ -7,7 +7,7 @@ Se ha seguido el modelo original diseñado y publicado en *Figma* por parte de *
 
 ## Estado
 
-Maqueta visual del encriptador hechos en HTML y CSS completado.
+Maqueta visual del encriptador en HTML y CSS completado.
 
 ## Errores
 
