@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Encriptador para el **challenge** del curso de **Alura Latam** y el programa **ONE** de **Oracle** de Principiante De Programación.
+Encriptador para el **challenge** del curso de **Alura Latam** y el programa **ONE** de **Oracle** Principiante en Programación.
 Se ha seguido el modelo original diseñado y publicado en **Figma** por parte de *Alura Latam*.
 
 ## Estado
