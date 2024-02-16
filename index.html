@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="icon" href="imgs/Logob.png">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <main>
+
+        <section class="seccion-izquierda">            
+            <img class="logo" src="imgs/Logo.png">
+            <div class="primer-cuadro">
+                <textarea name="acifrar" class="a-cifrar" placeholder="Ingrese el texto aqui"></textarea>
+                <p><span class="vector">!</span> Solo letras minúsculas y sin acentos</p>
+                <div class="botones">
+                    <button class="bsim bencriptar">Encriptar</button>
+                    <button class="bsim bdesencriptar">Desencriptar</button>
+                </div>
+            </div>        
+        </section>
+
+        <section class="seccion-derecha">                        
+            <div class="resultado">
+                <textarea name="decifrado" class="texto-decifrado" >Texto de prueba
+                            asaa
+                            aaasa
+                            asas
+                            asa
+                            as
+                </textarea>
+                <button class="bsim bcopiar">Copiar</button>
+            </div>
+            <div class="mensaje">
+                <img class="muneco" src="imgs/Muñeco.png">
+                <div class="mensajes">
+                    <h1>Ningún mensaje fue encontrado<h1>
+                    <p>Ingrese el texto que desea encriptar o desencriptar</p>
+                </div>                  
+            </div>                                
+        </section>        
+    </main>
+    <footer>
+        <div>
+            <p>Diseño: Alura Team. Código: Gercodex.</p>
+        </div>
+        
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
