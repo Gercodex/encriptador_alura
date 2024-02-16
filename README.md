@@ -13,6 +13,8 @@ Maqueta visual del encriptador hechos en HTML y CSS completado.
 
 Sin feedback hasta el momento.
 
+## Vista Previa
+
 ![maquetaenc](https://github.com/Gercodex/encriptador_alura/assets/157858339/e9db29cd-e58a-4cc0-8025-389ba14df696)
 
 
