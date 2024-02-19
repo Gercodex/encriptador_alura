@@ -17,18 +17,18 @@
         <section class="seccion-izquierda">            
             <img class="logo" src="imgs/Logo.png">
             <div class="primer-cuadro">
-                <textarea name="acifrar" class="a-cifrar" placeholder="Ingrese el texto aqui"></textarea>
+                <textarea id="texto-a-encriptar" name="acifrar" class="a-cifrar" placeholder="Ingrese el texto aqui"></textarea>
                 <p><span class="vector">!</span> Solo letras minúsculas y sin acentos</p>
                 <div class="botones">
-                    <button class="bsim bencriptar">Encriptar</button>
+                    <button onclick="encriptar()" class="bsim bencriptar">Encriptar</button>
                     <button class="bsim bdesencriptar">Desencriptar</button>
                 </div>
             </div>        
         </section>
 
         <section class="seccion-derecha">                        
-            <div class="resultado">
-                <textarea name="decifrado" class="texto-decifrado" >Texto de prueba
+            <div id="id-resultado" class="resultado">
+                <textarea id="texto-resultado" name="decifrado" class="texto-decifrado" >Texto de prueba
                             asaa
                             aaasa
                             asas
@@ -37,7 +37,7 @@
                 </textarea>
                 <button class="bsim bcopiar">Copiar</button>
             </div>
-            <div class="mensaje">
+            <div id="id-mensaje" class="mensaje">
                 <img class="muneco" src="imgs/Muñeco.png">
                 <div class="mensajes">
                     <h1>Ningún mensaje fue encontrado<h1>
