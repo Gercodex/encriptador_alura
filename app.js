@@ -19,7 +19,7 @@ function sinTexto(){
 }
 
 function validar(texto){    
-    return /[^a-z 0-9]/.test(texto); /*si es válido regresa si no termina*/
+    return /[^a-z ]/.test(texto); /*si es válido regresa si no termina*/
 }
 
 function convertirToArreglo(texto){    /*devuelve el arreglo de la cadena de texto*/
