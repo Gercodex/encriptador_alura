@@ -1,5 +1,6 @@
 
-
+const llaveA = ["ai","enter","imes","ober","ufat"];
+const llaveB = ["a","e","i","o","u"];
 
 function capturar(){ /*captura el texto del contenedor*/
     return document.getElementById("texto-a-encriptar").value;
@@ -11,9 +12,14 @@ function escribir(texto){
     document.getElementById("texto-resultado").value = texto;
 }
 
-function validar(texto){
-    /*si es válido regresa si no termina*/
-    return true;
+function sinTexto(){
+    document.getElementById("id-mensaje").style.display="block";
+    document.getElementById("id-resultado").style.display="none";
+    document.getElementById("texto-resultado").value = "";
+}
+
+function validar(texto){    
+    return /[^a-z 0-9]/.test(texto); /*si es válido regresa si no termina*/
 }
 
 function convertirToArreglo(texto){    /*devuelve el arreglo de la cadena de texto*/
@@ -22,14 +28,14 @@ function convertirToArreglo(texto){    /*devuelve el arreglo de la cadena de tex
 
 function getLlave(termino){ /*devuelve el término o llave*/ 
     let res = "";
-    let Encriptadas = ["ai","enter","imes","ober","ufat"];
-    let AEncriptar = ["a","e","i","o","u"];
-    for(let i = 0; i < AEncriptar.length; i++){
-        if(termino == AEncriptar[i]){
-            res = Encriptadas[i];
+    let encriptadas = llaveA
+    let aEncriptar = llaveB
+    for(let i = 0; i < aEncriptar.length; i++){
+        if(termino == aEncriptar[i]){
+            res = encriptadas[i];
             break;
-        }else if(termino == Encriptadas[i]){
-            res = AEncriptar[i];
+        }else if(termino == encriptadas[i]){
+            res = aEncriptar[i];
             break;
         }else{
             res = 0;
@@ -38,31 +44,65 @@ function getLlave(termino){ /*devuelve el término o llave*/
     return res;
 }
 
-function encriptar(){        
-    // let encriptado = [];
+function getTermino(arreglo, indice, llave){
+    let res = -1;
     let temp = [];
-    let tempb;
-    let capturado = capturar();    
-    let arreglo = convertirToArreglo(capturado);        
-    for(let i = 0; i < arreglo.length; i++){ /*recorrido de arreglo */
-        tempb = true;
-        if(temp = getLlave(arreglo[i])){
-            for(let j = 0; j < temp.length; j++){  /*término o llave */
-                if(tempb){
-                    arreglo.splice(i++,1,temp[j]);
-                    tempb = false;
-                    // console.log("ok"+i);
-                }else{
-                    arreglo.splice(i++,0,temp[j]);
-                    // console.log("nok");
-                }
+    let contador = [];    
+    for(let i = 0; i < llave.length; i++){   /*recorre llaves */
+        temp = convertirToArreglo(llave[i]);  /*recorre determinada llave */      
+        for(let j = 0; j < temp.length; j++){   /*recorre caracteres de llave */
+            if(arreglo[indice + j] == temp[j]){  /*compara char a char de arreglo */                                                    
+                contador.push(temp[j]);     /* guarda coincidencias */ 
+                if(contador.length == temp.length){
+                    res = contador.toString().replace(/,/g, '');  /* = llave == mayor */                  
+                    contador = [];     // borra para testear siguiente                   
+                }  
+            }else{                   
+                break;      /* temina for si no coincide termino*/
             }
-            i--;            
-        }else{
-            // console.log("no");
-        }        
+        }                
     }
-    escribir(arreglo.toString().replace(/,/g, ""));
+    if(res.length > 0){   //modifica e imprime resultado
+        arreglo.splice(indice,res.length,getLlave(res));
+    }
     // console.log(arreglo);
+    return;
 }
+
+function encAmbivalente(llave){   //recorre cada letra del area de texto    
+    let capturado = capturar();
+    if(capturado != ""){
+        if(!validar(capturado)){
+            let arreglo = convertirToArreglo(capturado);
+            for(let i = 0; i < arreglo.length; i++){
+                getTermino(arreglo,i,llave);        
+            }
+            escribir(arreglo.toString().replace(/,/g,''));
+        }else{
+            alert("Sólo letras minúsculas y sin acentos");   
+        }
+    }else{
+        sinTexto();
+    }
+    return;
+}
+
+function desencriptar(){
+    encAmbivalente(llaveA);
+    return;
+}
+
+function encriptar(){
+    encAmbivalente(llaveB);
+    return;
+}
+
+function copiarAPortapapeles(){ /* *********** <- "Basado en w3s. " +++++++++++ */
+    let resultado = document.getElementById("texto-resultado");    
+    resultado.select();    
+    navigator.clipboard.writeText(resultado.value);
+    alert("Copiado");
+}
+
+
 
