@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- @utor: Gercodex © -->
+<html lang="es"> <!-- Notas: mediante divs anidados se puede hacer uso de posiciones relativas y absolutas anidadas a través de los bloques de relleno, mismos que permiten delimitar los elementos que contienen. Se utiliza la propiedad padding para establecer distancias entre determinados elementos que permiten simular distancias fijas cuando el viewport cambia de tamaño.  -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,41 +10,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
-<body>
-    
-    <main>
-
-        <section class="seccion-izquierda">            
-            <img class="logo" src="imgs/Logo.png">
-            <div class="primer-cuadro">
-                <textarea id="texto-a-encriptar" name="acifrar" class="a-cifrar" placeholder="Ingrese el texto aqui" ></textarea>
-                <p><span class="vector">!</span> Solo letras minúsculas y sin acentos</p>
-                <div class="botones">
-                    <button onclick="encriptar()" class="bsim bencriptar">Encriptar</button>
-                    <button onclick="desencriptar()" class="bsim bdesencriptar">Desencriptar</button>
-                </div>
-            </div>        
-        </section>
-
-        <section class="seccion-derecha">                        
-            <div id="id-resultado" class="resultado">
-                <textarea id="texto-resultado" name="decifrado" class="texto-decifrado" ></textarea>
-                <button onclick="copiarAPortapapeles()" class="bsim bcopiar">Copiar</button>
+<body onresize="inicio()">  
+    <main id="main" >        
+       <div class="main-relleno"><div class="izquierda"><img class="logo" src="imgs/Logob.png" alt=""></div><div class="centro"><div class="centro-relleno"><div class="centro-relleno-relleno-para-texto"><textarea placeholder="Ingrese el texto aqui" class="texto-a-cifrar" name="acifrar" id="texto-a-encriptar" cols="30" rows="10"></textarea></div><div class="centro-relleno-para-botones"><div class="centro-relleno-relleno-para-aviso"><p><span>!</span> Solo letras minúsculas y sin acentos.</p></div><div class="centro-relleno-relleno-para-botones"><button onclick="encriptar()" class="encriptar">Encriptar</button><button onclick="desencriptar()" class="desencriptar">Desencriptar</button></div></div></div></div><div class="derecha">
+                <div class="derecha-relleno"><div id="id-mensaje" class="derecha-relleno-relleno-muneco-aviso"><div class="derecha-relleno-relleno-muneco"><img src="imgs/Muñeco.png" alt="" class="muneco"></div>
+                <div class="derecha-relleno-relleno-aviso"><div class="derecha-relleno-relleno-aviso-superior"><p>Ningún mensaje fue encontrado</p></div>
+                <div class="derecha-relleno-relleno-aviso-inferior"><p>Ingresa el texto que desees encriptar o desencriptar.</p></div></div></div>
+                <div id="id-resultado" class="derecha-relleno-resultado"><div class="derecha-relleno-relleno-para-texto"><textarea class="decifrado" name="decifrado_n" id="texto-resultado" cols="30" rows="10"></textarea></div>
+                <div class="derecha-relleno-relleno-para-boton"><button onclick="copiarAPortapapeles()" class="bcopiar">Copiar</button></div><div></div>
+                <div></div></div></div>
             </div>
-            <div id="id-mensaje" class="mensaje">
-                <img class="muneco" src="imgs/Muñeco.png">
-                <div class="mensajes">
-                    <h1>Ningún mensaje fue encontrado<h1>
-                    <p>Ingrese el texto que desea encriptar o desencriptar</p>
-                </div>                  
-            </div>                                
-        </section>        
-    </main>
+       </div>
+    </main> 
     <footer>
-        <div>
-            <p>Diseño: Alura Team. Código: Gercodex.</p>
-        </div>
-        
+        <div><p style="color: black;">Código: Gerardo Gutierrez  -  Diseño: Alura Latam Team.  </p></div>
+        <div><a href="https://github.com/Gercodex/encriptador_alura"><img class="enlace" style="width: 20px;" src="imgs/github-mark.png" alt="github-mark"></a></div>
     </footer>
     <script src="app.js"></script>
 </body>

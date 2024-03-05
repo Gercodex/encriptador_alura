@@ -1,6 +1,53 @@
+/*@utor: Gercodex ©*/
+
+/* Notas: Se puede reemplazar LlaveB por una combinación de dos o más letras siempre que no se repita, se puede usar combinaciones similares siempre que exista alguna diferencia*/
+/* A considerar: combinación o cambio de llaves por iteraciones, guardar secuencia de combinaciones de llaves; realizar aleatoriamente y guardar secuencia de llaves. Cambiar tamaño de area de texto dinámicamente conforme se escriba.*/
 
 const llaveA = ["ai","enter","imes","ober","ufat"];
 const llaveB = ["a","e","i","o","u"];
+
+function inicio(){
+    console.log("c");
+    let areatexto = document.getElementById("texto-a-encriptar"); 
+    if(window.screen.availWidth <= 375){        
+        areatexto.addEventListener("input",tipear);
+        tipearResultado = ()=>{masAltura("texto-resultado",432);};
+        tipear();
+        tipearResultado();
+        }else{
+        areatexto.removeEventListener("input",tipear);
+        tipearResultado = ()=>{};
+        areatexto.style="height:''";
+        document.getElementById("texto-resultado").style="height:''";
+    }
+}
+
+function masAltura(ide,maxh){
+    let h = document.getElementById(ide);    
+    let hc = h.clientHeight;
+    let hs = h.scrollHeight;        
+    console.log(hs);
+    console.log(hc);    
+    // console.log("actual "+h.style.height);    
+    if(hs != hc && hs <= maxh){                
+        h.style.height = h.scrollHeight + "px";                
+    }else if(hs > maxh){
+        h.style.height = maxh + "px";                
+    }else{
+        if(capturar() == ''){
+            console.log("vacio");
+            h.style="height:''";
+        }
+    }
+}
+
+function tipear(){
+    masAltura("texto-a-encriptar",624);
+}
+
+function tipearResultado(){      
+        
+}
 
 function capturar(){ /*captura el texto del contenedor*/
     return document.getElementById("texto-a-encriptar").value;
@@ -10,16 +57,25 @@ function escribir(texto){
     document.getElementById("id-mensaje").style.display="none";
     document.getElementById("id-resultado").style.display="block";
     document.getElementById("texto-resultado").value = texto;
+
+    // console.log(window.screen.availWidth);
+    //let areatexto = document.getElementById("texto-a-encriptar"); /*cambia tamaño de area de texto*/        
+    // if((window.screen.availWidth <= 375) && (areatexto.value != '')){        
+    //     areatexto.style.height="624px"
+    // }    
 }
 
 function sinTexto(){
     document.getElementById("id-mensaje").style.display="block";
     document.getElementById("id-resultado").style.display="none";
     document.getElementById("texto-resultado").value = "";
+    // if((window.screen.availWidth <= 375) && (document.getElementById("texto-a-encriptar").value == '')){
+    //     document.getElementById("texto-a-encriptar").style.height="235px"
+    // }
 }
 
 function validar(texto){    
-    return /[^a-z ]/.test(texto); /*si es válido regresa si no termina*/
+    return /[^a-z !]/.test(texto); /*si es válido regresa si no termina*/
 }
 
 function convertirToArreglo(texto){    /*devuelve el arreglo de la cadena de texto*/
@@ -88,12 +144,14 @@ function encAmbivalente(llave){   //recorre cada letra del area de texto
 }
 
 function desencriptar(){
-    encAmbivalente(llaveA);
+    encAmbivalente(llaveA);        
+    tipearResultado();
     return;
 }
 
 function encriptar(){
-    encAmbivalente(llaveB);
+    encAmbivalente(llaveB);  
+    tipearResultado();   
     return;
 }
 
@@ -103,6 +161,8 @@ function copiarAPortapapeles(){ /* *********** <- "Basado en w3s. " +++++++++++ 
     navigator.clipboard.writeText(resultado.value);
     alert("Copiado");
 }
+
+inicio();
 
 
 
