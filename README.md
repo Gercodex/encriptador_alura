@@ -7,16 +7,24 @@ Se ha seguido el modelo original diseñado y publicado en *Figma* por parte de *
 
 ## Estado
 
-* Maqueta visual del encriptador en HTML y CSS completado.
-* Funcionalidad de botón encriptar añadida
+* Encriptador terminado - Diseño Original
+* Funcionalidad encriptar completada
+* Funcionalidad desencriptar completada
+* Modo Responsivo completado con limitaciones en modo horizontal para móviles.
+* Funcionalidad de botón copiar completada
+* Rodapie.
 
 ## Errores
 
-Sin feedback hasta el momento.
+* Función inicio puede dar mensajes de error cuando se cambian a distintos modos de visualización.
 
 ## Notas
 
-Pendiente validación de texto.
+Validación de texto admite espacios indefinidos letras minúsculas y el símbolo ! de cierre de exclamación.
+En resoluciónes menores a 375px width el área de texto se incrementa en tamaño dinámicamente conforme se escribe hasta el tamaño máximo de acuerdo con el diseño original.
+El tamaño del área del resultado cambia dinámicamente de acuerdo con el tamaño del texto encriptado-desencriptado hasta el máximo de acuerdo con el diseño original.
+
+(Deseable aunque no implementado) El tamaño del área de texto disminuye dinámicamente cuando se borra texto.
 
 ## Vista Previa
 
