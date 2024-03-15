@@ -13,6 +13,8 @@ Se ha seguido el modelo original diseñado y publicado en *Figma* por parte de *
 * Modo Responsivo completado con limitaciones en modo horizontal para móviles.
 * Funcionalidad de botón copiar completada
 * Rodapie.
+* Funcionalidad selector de temas de color
+* Temas añadidos
 
 ## Errores
 
@@ -20,11 +22,8 @@ Se ha seguido el modelo original diseñado y publicado en *Figma* por parte de *
 
 ## Notas
 
-Validación de texto admite espacios indefinidos letras minúsculas, sin acentos y el símbolo ! de cierre de exclamación.
-En resoluciónes menores a 375px width el área de texto se incrementa en tamaño dinámicamente conforme se escribe hasta el tamaño máximo de acuerdo con el diseño original.
-El tamaño del área del resultado cambia dinámicamente de acuerdo con el tamaño del texto encriptado-desencriptado hasta el máximo de acuerdo con el diseño original.
-
-(Deseable aunque no implementado) El tamaño del área de texto disminuye dinámicamente cuando se borra texto.
+Admite espacios indefinidos, letras minúsculas, sin acentos y el símbolo '!'.
+En resolucio menor a 375px el área de texto se incrementa al tamaño conforme se escribe de acuerdo con el diseño original, también el área del resultado.
 
 ## Vista Previa
 
@@ -38,6 +37,18 @@ El tamaño del área del resultado cambia dinámicamente de acuerdo con el tama�
 ## Funcionalidad Encriptar Ejemplo
 
 ![screen_d](https://github.com/Gercodex/encriptador_alura/assets/157858339/6e22536e-82a8-4143-a48d-42d136e0dcbd)
+
+## Temas extra vista previa
+
+![temaoscuro](https://github.com/Gercodex/encriptador_alura/assets/157858339/b0e1c995-8d78-4c52-9b2f-ab2a8b8aee4a)
+
+
+![temacyber](https://github.com/Gercodex/encriptador_alura/assets/157858339/2f06b944-ede5-458e-9d7c-0960945ead82)
+
+
+![temacat](https://github.com/Gercodex/encriptador_alura/assets/157858339/cf3518e3-3e64-483b-8cad-ea7fec032349)
+
+
 
 
 
