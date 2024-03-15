@@ -2,8 +2,25 @@
 
 body{
     margin: 0; 
-    padding: 0;
-    background: #ccccda;    
+    padding: 0;   
+    position: relative;         
+}
+
+.fondo-x{
+    position: absolute;        
+}
+
+nav{
+    position: absolute;   
+    top: -80px;
+    right: 0;        
+    height: 112px;
+    z-index: 3;
+    width: 100%;
+    transition: 300ms;    
+}
+nav:hover{
+    top:-40px;
 }
 
 p, span{
@@ -14,18 +31,17 @@ p, span{
 main{    
     max-width: 1440px;    
     height: 100vh;
-    background: #f3f5fc;
     padding: 40px;
     box-sizing: border-box;
     margin: 0 auto;   
     min-height: 580px;
+    
 }
 
 .main-relleno{
-    /* background: lightcoral; */
     width: 100%;
     height: 100%;
-    position: relative;    /****1**/
+    position: relative; 
 }
 
 .izquierda, .centro, .derecha{
@@ -38,7 +54,6 @@ main{
     text-align: center;
     width: 8.8235294%;
     height: 100%;
-    /* background: lightcyan; */
 }
 
 .logo{    
@@ -46,11 +61,9 @@ main{
 }
 
 .centro{
-    /* width: 61.7647059%; ***4 abs, width, padd.*/  
     position: absolute;
     width: 91.1764706%;     
     height: 100%;
-    /* background: lightgray; */
     padding: 32px 480px 32px 80px;
     min-width: 400px;
     box-sizing: border-box;
@@ -58,14 +71,16 @@ main{
 .centro-relleno{
     width: 100%;
     height: 100%;
-    /* background: lightgreen;     */
     position: relative;
-    min-width: 400px;/* :DDDDD hasta 400px en ancho del centro */
+    min-width: 400px;
+}
+.centro-cat{
+    display: none;
+    position: absolute;
 }
 .centro-relleno-relleno-para-texto{
     width: 100%;
     height: 100%;
-    /* background: lightskyblue; */
     padding-bottom: 165px;
     padding-top: 96px;
     box-sizing: border-box;
@@ -77,7 +92,6 @@ main{
     border: none;
     font-family: inherit;
     font-size: 2em;
-    color: #0a3871;
     resize: none;   
     background: transparent; 
 }
@@ -88,14 +102,12 @@ main{
     position: absolute;    
     width: 100%;
     height: 101px;
-    /* background: blue; */
     bottom: 0;
 }
 
 .centro-relleno-relleno-para-aviso{ 
     width: 100%;
     height: 18px;
-    /* background: lightcoral; */
     margin-bottom: 16px;
     position: relative;
     box-sizing: border-box;
@@ -104,13 +116,10 @@ main{
 
 .centro-relleno-relleno-para-aviso p{
     font-size: 0.75em;
-    color: #495057;    
 }
 .centro-relleno-relleno-para-aviso p span{
     display: inline-block;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: gray;
-    color: white;
     width: 16px;
     height: 16px;
     border-radius: 16px;
@@ -127,55 +136,39 @@ main{
     height: 100%;
     margin-right: 1.7647059%;
     border-radius: 24px;
-    font-family: inherit;
-    color: white;
-    background: #0a3871;
-    border:1px solid #0a3871;    
+    font-family: inherit;       
 }
-.encriptar:hover{
-    background: #1e568f;
-}
+
 .desencriptar{
     width: 48.2352941%;
     height: 100%;    
     margin-left: 1.7647059%;
     border-radius: 24px;
     font-family: inherit;
-    border:1px solid #0a3871;
-    background: #d8dfe8;
-    color: #0a3871;
 }
-.desencriptar:hover{
-    background: white;
-}
+
 .derecha{
-    position: absolute; /****2**/
-    /* background: lightgoldenrodyellow; */
-    background: white;
+    position: absolute; 
     width: 29.4117647%;
-    min-width: 400px; /****3***/
+    min-width: 400px; 
     height: 100%;        
     padding: 32px;
     border-radius: 32px;
     box-sizing: border-box;  
-    right: 0;  /* pos 0 der*/
-    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.08);
+    right: 0;  
 }
 .derecha-relleno{
-    /* background: lightpink; */
     width: 100%;
     height: 100%;
 }
-.derecha-relleno-relleno-muneco-aviso{ /**********C*/
+.derecha-relleno-relleno-muneco-aviso{ 
     display: block;
     width: 100%;
     height: 100%;
-    /* background: limegreen; */
 }
-.derecha-relleno-relleno-muneco{ /*******C css*/
+.derecha-relleno-relleno-muneco{ 
     width: 100%;
     height: 58.5227273%;
-    /* background-color: lightblue;     */
     position: relative;
     min-height: 304px;
 }
@@ -188,7 +181,6 @@ main{
 .derecha-relleno-relleno-aviso{ 
     width: 100%;
     height: 41.47722727%;
-    /* background: lightpink; */
     padding-top: 32px;
     box-sizing: border-box;
     line-height: 48px;
@@ -196,46 +188,38 @@ main{
 .derecha-relleno-relleno-aviso-superior{ 
     width: 100%;
     height: 58px;
-    /* background: lime; */
     padding-bottom: 8px;
 }
 .derecha-relleno-relleno-aviso-superior p{
     margin: 0;
     padding: 0;
-    /* background: sandybrown; */
     text-align: center;
     font-size: 1.5em;
     font-weight: 700;
     line-height: 28.8px;
-    color: #343A40;
 }
 .derecha-relleno-relleno-aviso-inferior{
     width: 100%;
     height: 48px;
-    /* background: lawngreen; */
     padding-top: 8px;
 }
 .derecha-relleno-relleno-aviso-inferior p{
     margin: 0;
     padding: 0;
-    /* background: sandybrown; */
     text-align: center;
-    line-height: 24px;
-    color: #495057;
+    line-height: 24px;    
 }
 
-.derecha-relleno-resultado{    /**********C*/
+.derecha-relleno-resultado{    
     display: none;
     width: 100%;
     height: 100%;
-    /* background: limegreen; */
     position: relative;
 }
 
 .derecha-relleno-relleno-para-texto{    
     width: 100%;
     height: 100%;
-    /* background: orange; */
     padding: 0 0 99px 0;
     box-sizing: border-box;
     
@@ -250,7 +234,6 @@ main{
     font-family: inherit;
     font-size: 1.75em;
     line-height: 36px;
-    color: #495057;
     resize: none;
     outline: none;
 }
@@ -258,53 +241,103 @@ main{
     position: absolute;
     width: 100%;
     height: 67px;
-    /* background: transparent; */
     bottom: 0;
 }
 .bcopiar{
     width: 100%;
     height: 100%;
     border-radius: 24px;
-    border: 1px solid #0a3871;
-    color: #0a3871;
-    background: white;
-}
-.bcopiar:hover{
-    background: #d8dfe8;
 }
 
-footer{   
-    max-width: 1440px;        
-    /* background: blueviolet; */
-    padding: 0;
-    box-sizing: border-box;
-    margin: 0 auto;       
-    height: fit-content;
+footer{      
+    display: block;
+    max-width: 1440px;
+    margin: 0 auto; 
 }
 
-footer div{        
-    text-align: center;    
-    background: rgba(0, 0, 0,0.0);
-    color:  rgba(255, 255, 255,0.0);        
-    height: fit-content;
+footer div{  
+    text-align: center;        
     transition: 370ms;
-    width: 100%;
-    padding: 15px;
-    box-sizing: border-box;
-    vertical-align: middle;
+    width: 100%;            
+}
+
+footer div p{
+    padding: 10px 0;
+    font-size: 13px;    
+}
+
+footer div a{
+    display: inline-block;    
+    height: 25px;    
 }
 
 .enlace{
     cursor: pointer;
+    width: 20px;
 }
 
-footer div:hover{
-    background: lightcoral;    
-    text-align: center;
-    background: rgba(5, 27, 72, 0.5);
-    color:  rgba(255, 255, 255,0.9);         
-    color: white;            
+.contenedor{           
+    position: absolute;
+    display: block;                  
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;   
+    right: 0;      
 }
+.radio_b{    
+    display: inline-block;    
+    position: relative;
+    opacity: 0.3;
+    padding: 0;
+    margin: 0;
+    width: 75px;   
+    height: 40px;      
+}
+.radio_b:hover{
+    opacity: 0.7;
+}
+
+input[name="tem_a"]{  
+    position: absolute;
+    opacity: 0;    
+    width: 75px;
+    height: 40px;    
+    padding: 0;
+    margin: 0;     
+    top: 0;   
+    z-index: 10; 
+    cursor: pointer;    
+}
+
+.dip{        
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    display: block;    
+    width: 75px;
+    height: 40px;    
+    top: 0;    
+    transition: 370ms;             
+}
+
+.radio_b:nth-child(1) div{
+    background: linear-gradient(45deg,#ffffff,#aebcbf, #0a5983);
+}
+.radio_b:nth-child(2) div{
+    background: linear-gradient(45deg,#818181,#696969, #212121);
+}
+.radio_b:nth-child(3) div{
+    background: linear-gradient(45deg,#96c3bb,#2a8fa9, #013b49);
+}
+.radio_b:nth-child(4) div{
+    background: linear-gradient(45deg,#aea5dd,#8152d3, #201148);
+}
+.radio_b input:checked ~ .dip{
+    box-sizing: border-box;
+    border: 7px solid rgb(254, 255, 255);        
+}
+
 
 @media screen and (max-width:1134px) {    
     .centro{
@@ -319,11 +352,17 @@ footer div:hover{
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px) {     
+    nav{
+        top: -40px;
+    }
+    nav:hover{
+        top: 0px;
+    }
     main{
         box-sizing: initial;
         height: fit-content;
-        min-width: 525px;
+        min-width: 512px;
     }
     .main-relleno{
         position: initial;
@@ -347,16 +386,20 @@ footer div:hover{
         position: initial;
         padding: 20px 0 32px 0;
         width: 100%;        
+        min-width: auto;
     }
+    .centro-relleno{
+        min-width: auto; 
+     }
     .texto-a-cifrar{
         height: 528px;
     }  
     .derecha{
         position: initial;
         width: 100%;
-        min-width: 200px;
         height: fit-content;        
         margin-top: 32px;
+        min-width: auto;
         
     }
     .derecha-relleno{
@@ -384,23 +427,23 @@ footer div:hover{
     .decifrado{
         height: 180px;
     }
-    footer{
-        box-sizing: initial;
-        min-width: 525px;
+    footer{                 
+        padding: 0 40px;       
+        min-width: 512px;
     }
 }
 
 @media screen and (max-width:375px) {
+    
     main{
-        padding: 16px 16px 40px;       
-        /* min-width: 315px;  */
-        min-width: 315px;              
+        padding: 16px 16px 40px;               
+        min-width: 316px;     
     }    
     .izquierda{
         height: 48px;
         margin-top: 8px;        
     }
-    .logo{
+    .logo{        
         width: 30px;
         height: 48px;
     }
@@ -420,7 +463,6 @@ footer div:hover{
     .centro-relleno-relleno-para-botones{
         display: block;
         height: 100%;
-        /* background: blueviolet;    */
         width: 100%;             
     }
     .encriptar{
@@ -443,7 +485,7 @@ footer div:hover{
     }
     footer{
         padding: 0 16px;
-        min-width: 315px;              
+        min-width: 316px;
     }
 }
 

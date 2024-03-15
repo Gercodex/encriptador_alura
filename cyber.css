@@ -1,0 +1,445 @@
+/*@utor: Gercodex ©*/
+
+body{
+    background-color: #000;  
+    background: url(imgs/YWJQ.jpg);
+    background-repeat:round;
+    background-size:auto;
+}
+
+main{    
+    background: #0b498824;
+    animation: matiz 5s infinite;
+}
+:root{
+    --sombra: drop-shadow(1px 1px 10px rgba(2, 116, 50, 0.852));
+    --sombrab: drop-shadow(1px 1px 10px rgba(55, 122, 93, 0));
+    --tam: 9px;
+}
+@keyframes matiz{
+    0% {filter: var(--sombrab);}
+    30% {filter: var(--sombra);}
+    45% {filter: var(--sombra);}
+    100% {filter: var(--sombrab);}
+}
+
+.logo{
+    filter:invert() saturate(3) hue-rotate(45deg) drop-shadow(0px 0px 10px limegreen);
+}
+
+.texto-a-cifrar{
+    color: limegreen;
+    background: transparent; 
+    caret-color: #ffffff;    
+    font-family: "Electrolize", monospace;        
+}
+.texto-a-cifrar::placeholder{
+    color: #97ceca;
+}
+
+.centro-relleno-relleno-para-aviso p{
+    color: #97ceca;  
+    font-family: "Electrolize", monospace;
+}
+.centro-relleno-relleno-para-aviso p span{
+    background: rgb(199, 181, 16);
+    color: rgb(9, 61, 135);
+}
+
+.encriptar{    
+    color: white;    
+    background: #89d409a7;
+    border: 1px solid #fff306d4;   
+    font-family: "Electrolize", monospace;
+    transition: 300ms;  
+    box-shadow: 0 24px 32px -8px rgba(7, 218, 98, 0.446);
+}
+.encriptar:hover{
+    background: rgba(0, 0, 255, 0.493);
+    color: rgb(249, 192, 100);
+    box-shadow: 0 24px 32px -8px rgba(5, 75, 156, 0.624);
+}
+.desencriptar{
+    border:1px solid #eaff03;
+    background: #0ba74cb5;
+    color: rgba(248, 248, 255, 0.734);    
+    font-family: "Electrolize", monospace;
+    transition: 300ms;
+    box-shadow: 0 24px 32px -8px rgba(7, 218, 98, 0.446);
+}
+.desencriptar:hover{
+    background: rgba(0, 0, 255, 0.493);
+    color: rgb(249, 192, 100);
+    box-shadow: 0 24px 32px -8px rgba(5, 75, 156, 0.624);
+}
+.derecha{
+    background: rgba(45, 41, 99, 0.52);
+    box-shadow: 0 24px 32px -8px rgba(7, 218, 98, 0.792);
+}
+
+.muneco{
+    animation: matizm 5s infinite;    
+}
+
+@keyframes matizm{
+    0% {filter: invert(30%) sepia() hue-rotate(130deg) drop-shadow(10px 10px 10px black) brightness(80%);}
+    25% {filter: invert(35%) sepia() hue-rotate(130deg) drop-shadow(10px 10px 10px rgb(118, 118, 118)) brightness(90%);}
+    50% {filter: invert(35%) sepia() hue-rotate(130deg) drop-shadow(10px 10px 10px rgb(130, 130, 130)) brightness(90%);}
+    100% {filter: invert(30%) sepia() hue-rotate(130deg) drop-shadow(10px 10px 10px black) brightness(80%);}
+}
+
+.derecha-relleno-relleno-aviso{ 
+    filter: drop-shadow(1px 1px 5px blue);
+}
+
+.derecha-relleno-relleno-aviso-superior p{
+    color: #c4b7fd;
+    font-family: "Electrolize", monospace;
+}
+
+.derecha-relleno-relleno-aviso-inferior p{
+    color: #c4b7fd;
+    font-family: "Electrolize", monospace;
+}
+
+.decifrado{ 
+    background: transparent;
+    animation: animderecha 3s infinite;        
+    font-family: "Electrolize",monospace;
+    color: lime;    
+}
+
+.bcopiar{
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background: #65a583b6;
+    font-family: "Electrolize", monospace;
+    transition: 300ms;
+    box-shadow: 0 24px 32px -8px rgba(5, 75, 156, 0.624);
+}
+
+.bcopiar:hover{
+    background: #cae97482;
+    color: rgb(27, 30, 97);
+    box-shadow: 0 24px 32px -8px #cae974af;
+}
+
+footer div{        
+    background: rgba(137, 137, 137, 0.3);
+    color:  rgba(237, 237, 237, 1);        
+}
+
+footer div p{
+    color: white;
+}
+
+.enlace{
+    cursor: pointer;
+    content: url(imgs/github-mark-white.png);
+}
+
+footer div:not(.contenedor,.radio_b,.dip):hover{
+    background: rgba(5, 27, 72, 0.5);
+    color:  rgba(255, 255, 255,0.9);         
+    color: white;            
+}
+
+::selection{
+    background: rgb(7, 123, 81);
+    color: rgb(245, 239, 46);    
+}
+::-moz-selection{
+    background: rgb(7, 123, 81);
+    color: rgb(245, 239, 46);   
+}
+
+.fondo-x{
+    display: block;       
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;    
+    background: rgba(43, 13, 72, 0.113);
+    z-index: -3;        
+}
+.obj1{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 12px;
+    background: greenyellow;
+    animation: 7s animsquare ease-in-out infinite;            
+}
+@keyframes animsquare{
+    0% 
+    {        
+        top: 0;
+        left: 0;                 
+    }
+    25% 
+    {
+        top: 0;
+        left: calc(98%);        
+    }
+    50%
+    {
+        top:calc(98%);                
+        left: calc(98%);              
+    }
+    75%{
+        top:calc(98%);
+        left: 0;                    
+    }
+    100%{
+        top:0;
+        left: 0;        
+    }
+}
+
+.obj2{
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 100px;
+    content:url(imgs/satl.png);
+    transform: rotate(45deg) rotateX(180deg);
+    animation: 60s animsquares ease-in-out infinite;    
+    filter: brightness(70%);  
+    z-index: -6;       
+}
+@keyframes animsquares{
+    0% 
+    {        
+        bottom: 0;
+        left: 0;                                           
+    }
+    25%
+    {
+        bottom: 0;             
+        left: 60%;                
+    }
+    45%{
+        bottom: 85%;
+        left: 60%;                          
+    }
+    60%{
+        bottom: 85%;
+        left: 60%;           
+    }
+    70%{
+        bottom: 85%;
+        left: 0;                          
+    }
+    80%{
+        bottom: 85%;
+        left: 0;    
+    }
+    91%{
+        bottom: 0;             
+        left: 60%;             
+    }    
+    100%{
+        bottom: 0;             
+        left: 0;             
+    }
+}
+
+.fondo-xb{
+    display: block;       
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;    
+    background: transparent;
+    z-index: -3;        
+}
+.fondo-xb .obj1a{
+    position: absolute;
+    display: block;
+    width: var(--tam);
+    height: var(--tam);
+    border-radius: 12px;
+    background: rgba(0, 174, 255, 0.981);
+    animation: 5s animsquarea ease infinite;            
+}
+
+@keyframes animsquarea{
+    0% 
+    {        
+        top: 0;
+        left: 0;                   
+    }
+    25% 
+    {
+        top: 0;
+        left: calc(100%);        
+    }
+    50%
+    {
+        top:calc(100%);                
+        left: calc(100%);              
+    }
+    75%{
+        top:calc(100%);
+        left: 0;                    
+    }
+    100%{
+        top:0;
+        left: 0;        
+    }
+}
+
+.fondo-xb .obj1b{
+    position: absolute;
+    display: block;
+    width: var(--tam);
+    height: var(--tam);
+    border-radius: 12px;
+    background: rgba(63, 218, 52, 0.815);
+    animation: 5s animsquareb ease-out infinite;            
+}
+
+@keyframes animsquareb{
+    0% 
+    {        
+        top: 0;
+        left: 0;                   
+    }
+    25% 
+    {
+        top:calc(100%);
+        left: 0; 
+        
+    }
+    50%
+    {
+        top:calc(100%);                
+        left: calc(100%);              
+    }
+    75%{
+        top: 0;
+        left: calc(100%);                           
+    }
+    100%{
+        top:0;
+        left: 0;        
+    }
+}
+
+.fondo-xb .obj1c{
+    position: absolute;
+    display: block;
+    width: var(--tam);
+    height: var(--tam);
+    border-radius: 12px;
+    background: rgba(231, 152, 255, 0.778);
+    animation: 5s animsquarec ease-out infinite;            
+}
+@keyframes animsquarec{
+    0% 
+    {        
+        top: 0;
+        left: 0;                   
+    }
+    25% 
+    {
+        top:calc(100%);
+        left: 0; 
+        
+    }
+    50%
+    {
+        top:calc(100%);                
+        left: calc(100%);              
+    }
+    75%{
+        top: 0;
+        left: calc(100%);                           
+    }
+    100%{
+        top:0;
+        left: 0;        
+    }
+}
+
+.fondo-xb .obj1d{
+    position: absolute;
+    display: block;
+    width: var(--tam);
+    height: var(--tam);
+    border-radius: 12px;
+    background: rgba(231, 152, 255, 0.812);
+    animation: 5s animsquared ease-out infinite;            
+}
+
+@keyframes animsquared{
+    0% 
+    {        
+        top: 0;
+        left: 0;                   
+    }
+    25% 
+    {
+        top: 0; 
+        left:calc(100%);
+        
+    }
+    50%
+    {
+        top:calc(100%);                
+        left: calc(100%);              
+    }
+    75%{
+        top: calc(100%);
+        left: 0;                           
+    }
+    100%{
+        top:0;
+        left: 0;        
+    }
+}
+
+.fondo-xb .obj1e{
+    position: absolute;
+    display: block;
+    width: var(--tam);
+    height: var(--tam);
+    border-radius: 12px;
+    background: rgba(198, 231, 31, 0.845);    
+    animation: 5s animsquaree ease-out infinite;            
+}
+
+@keyframes animsquaree{
+    0% 
+    {        
+        top: 0;
+        left: 0;                   
+    }
+    25% 
+    {
+        top: calc(100%);
+        left:0; 
+        
+    }
+    50%
+    {
+        top:calc(100%);                
+        left: calc(100%);              
+    }
+    75%{
+        top: 0;
+        left:calc(100%); 
+    }
+    100%{
+        top:0;
+        left: 0;        
+    }
+}
+
+
+
+
+
+
+

@@ -5,6 +5,8 @@
 
 const llaveA = ["ai","enter","imes","ober","ufat"];
 const llaveB = ["a","e","i","o","u"];
+let cat = false;
+let catTemp = 0;
 
 function inicio(){
     console.log("c");
@@ -161,6 +163,73 @@ function copiarAPortapapeles(){ /* *********** <- "Basado en w3s. " +++++++++++ 
     navigator.clipboard.writeText(resultado.value);
     alert("Copiado");
 }
+
+function cambiar(tema){
+    let doc = document.getElementById("colores-tema");
+    doc.setAttribute("href",tema+".css");    
+}
+
+function catFrameA(){
+    let frame = document.getElementById("catImg");
+    let aleatorio;
+    while(1){
+        aleatorio = parseInt(Math.random() * 3);            
+        if(catTemp != aleatorio){
+            catTemp = aleatorio;
+            break;
+        }    
+    }
+    if(aleatorio == 0){
+        frame.style="content: url(imgs/gatoAColor.png)";                
+    }else if(aleatorio == 1){
+        frame.style="content: url(imgs/gatoBColor.png)";
+    }else if(aleatorio == 2){
+        frame.style="content: url(imgs/gatoCColor.png)";
+    }
+    
+    // console.log(aleatorio);
+    // let frame = document.getElementById("catImg");
+    // frame.style="content: url(imgs/gatoC.png)";
+}
+
+function catFrame(){
+    cat = true;
+    let ba = document.getElementById("idencriptar");
+    ba.addEventListener("click", catFrameA);    
+    let bb = document.getElementById("idesencriptar");
+    bb.addEventListener("click", catFrameA);
+    let bc = document.getElementById("idcopiar");
+    bc.addEventListener("click", catFrameA);
+}
+function catFrameRemove(){
+    if(cat == true){
+        let ba = document.getElementById("idencriptar");
+        ba.removeEventListener("click", catFrameA);    
+        let bb = document.getElementById("idesencriptar");
+        bb.removeEventListener("click", catFrameA);
+        let bc = document.getElementById("idcopiar");
+        bc.removeEventListener("click", catFrameA);
+        // alert("limpio");
+        cat = false;
+    }
+}
+function temaOriginal(){
+    cambiar("original");    
+    catFrameRemove();
+}
+function temaOscuro(){
+    cambiar("oscuro");
+    catFrameRemove();
+}
+function temaCyber(){
+    cambiar("cyber");
+    catFrameRemove();    
+}
+function temaCat(){
+    cambiar("cat");
+    catFrame();
+}
+
 
 inicio();
 

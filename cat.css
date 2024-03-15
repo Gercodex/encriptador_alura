@@ -1,0 +1,125 @@
+/*@utor: Gercodex ©*/
+
+body{
+    background: #2e2345;    
+}
+
+main{    
+    background: #1e1e1e00;
+}
+
+.logo{
+    filter:invert() saturate(1) hue-rotate(150deg);
+}
+
+.centro-cat{    
+    display: block;    
+    bottom: 0;
+    right: 0; 
+    z-index: -1;          
+}
+.centro-cat img{
+    width: 100%;
+    height: 100%;
+    /* filter: ; */
+}
+.centro-relleno-relleno-para-texto{
+    background: rgba(0, 149, 255, 0.157);
+}
+.texto-a-cifrar{
+    color: #fcff41;
+    /* background: blueviolet;  */
+    font-weight: 900;    
+}
+.texto-a-cifrar::placeholder{
+    color: #ffe944c2;
+}
+
+.centro-relleno-relleno-para-aviso p{
+    color: rgb(155, 239, 251);  
+}
+.centro-relleno-relleno-para-aviso p span{
+    background: rgb(200, 255, 19);
+    color: rgb(167, 9, 9);
+}
+
+.encriptar{    
+    color: rgb(0, 0, 0);
+    background: #7bbca5df;
+    border:1px solid #f7ff04; 
+    transition: 1s;
+}
+.encriptar:hover{
+    background: #7bbca589;
+    color: ghostwhite;
+}
+.desencriptar{
+    color: rgb(0, 0, 0);
+    background: #7bbca5df;
+    border:1px solid #f7ff04; 
+    transition: 1s;
+}
+.desencriptar:hover{
+    background: #7bbca589;
+    color: ghostwhite;
+}
+.derecha{
+    background: rgba(85, 6, 117, 0.656);
+    box-shadow: 0 24px 32px -8px rgba(155, 155, 155, 0.737);
+}
+.muneco{
+    filter: saturate(0) brightness(80%);
+}
+
+.derecha-relleno-relleno-aviso-superior p{
+    color: #94dafd;
+}
+.derecha-relleno-relleno-aviso-inferior p{
+    color: #94dafd;
+}
+.decifrado{     
+    background:rgba(52, 65, 49, 0.627);      
+    color: #fcff41;
+}
+.bcopiar{
+    color: rgb(0, 0, 0);
+    background: #7bbca5df;
+    border:1px solid #f7ff04; 
+    transition: 1s;
+}
+.bcopiar:hover{
+    background: #c1c1c1d6;
+    color: rgb(0, 0, 0);
+}
+
+footer div{        
+    background: rgba(137, 137, 137, 0.3);
+    color:  rgba(237, 237, 237, 1);        
+}
+
+footer div p{
+    color: white;
+}
+
+.enlace{
+    cursor: pointer;
+    content: url(imgs/github-mark-white.png);
+}
+
+footer div:not(.contenedor,.radio_b,.dip):hover{    
+    background: rgba(5, 27, 72, 0.5);
+    color:  rgba(255, 255, 255,0.9);         
+    color: white;            
+}
+::selection{
+    background: rgb(208, 98, 43);
+    color: rgb(182, 233, 255);
+}
+::-moz-selection{
+    background: rgb(208, 98, 43);
+    color: silver;
+}
+  
+
+
+
