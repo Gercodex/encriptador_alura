@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
 </head>
 <body onresize="inicio()">
-        
+    
     <main id="main" ><div class="fondo-x">
         <div class="obj1"></div>
         <img class="obj2"></img>
@@ -21,9 +21,16 @@
         <div class="obj4"></div>
         <div class="obj5"></div>
         <div class="obj6"></div>
-        <div class="obj7"></div>        
-    </div>                
-       <div class="main-relleno"><nav>
+        <div class="obj7"></div>                
+    </div>                    
+       <div class="main-relleno"><div id="idcajatip" class="cajatip">
+        <span class="mensajetip">Elegir tema</span>
+        <div class="cajapuntos">
+            <div class="flecha">
+                <div class="puntos"></div>                
+            </div>            
+        </div>
+    </div><nav id="idnav">
         <div class="contenedor">
             <div class="radio_b">
                 <input onchange="temaOriginal()" id="original" name="tem_a" type="radio" checked><div class="dip" ></div>
@@ -59,6 +66,5 @@
         <div class="logo-footer"><a href="https://github.com/Gercodex/encriptador_alura"><img class="enlace" src="imgs/github-mark.png" alt="github-mark"></a></div>               
     </footer>
     <script src="app.js"></script>    
-    <script src=""></script>
 </body>
 </html>

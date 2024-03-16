@@ -5,11 +5,9 @@ body{
     padding: 0;   
     position: relative;         
 }
-
 .fondo-x{
     position: absolute;        
 }
-
 nav{
     position: absolute;   
     top: -80px;
@@ -22,12 +20,10 @@ nav{
 nav:hover{
     top:-40px;
 }
-
 p, span{
     margin: 0;
     padding: 0;
 }
-
 main{    
     max-width: 1440px;    
     height: 100vh;
@@ -37,7 +33,6 @@ main{
     min-height: 580px;
     
 }
-
 .main-relleno{
     width: 100%;
     height: 100%;
@@ -339,6 +334,59 @@ input[name="tem_a"]{
 }
 
 
+.cajatip{
+    border-radius: 15px;
+    padding: 15px 3px;    
+    position: absolute;
+    width: 15vw;
+    max-width: 220px;    
+    height: fit-content;
+    background: rgba(74, 89, 96, 0.903);
+    right: 25%;
+    top: 40px;
+    text-align: center;       
+    z-index: 10;
+    border: 1px solid rgb(174, 186, 194);
+}
+.mensajetip{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+.cajapuntos{
+    width: 3em;
+    height: 3em;
+    /* background: lightblue; */
+    position: absolute;
+    top: -2em;
+    right: -2em;
+    z-index: -1;
+    overflow: hidden;
+}
+.flecha{
+    position: absolute;    
+    width: fit-content;
+    height: fit-content;        
+    bottom: -10px;    
+    animation: 1s anima ease-out infinite; 
+}
+.puntos{    
+    border: solid rgb(31, 215, 224);
+    border-width: 5px 5px 0px 0;
+    width: 10px;
+    height: 10px;    
+}
+@keyframes anima{
+    0%{
+        bottom: 0;
+        left: 0;
+    }
+    100%{
+        bottom: 100%;
+        left: 100%;
+    }
+}
+
+
 @media screen and (max-width:1134px) {    
     .centro{
         padding: 32px 400px 32px 0px; 
@@ -486,6 +534,6 @@ input[name="tem_a"]{
     footer{
         padding: 0 16px;
         min-width: 316px;
-    }
+    }    
 }
 

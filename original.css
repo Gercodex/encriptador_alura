@@ -3,56 +3,17 @@
 body{
     background: #ccccda;    
 }
-
 main{    
     background: #f3f5fc;
-}
-
-.main-relleno{
-    /* background: lightcoral; */
-}
-
-.izquierda{
-    /* background: lightcyan; */
-}
-
-.logo{    
-
-}
-
-.centro{
-    /* background: lightgray; */
-}
-.centro-relleno{
-    /* background: lightgreen;     */
-}
-.centro-relleno-relleno-para-texto{
-    /* background: lightskyblue; */
 }
 .texto-a-cifrar{
     color: #0a3871;
     background: transparent; 
 }
-
-.texto-a-cifrar:focus{
- 
-}
-.centro-relleno-para-botones{
-    /* background: blue; */
-}
-
-.centro-relleno-relleno-para-aviso{ 
-    /* background: lightcoral; */
-}
-
-.centro-relleno-relleno-para-aviso p{
-      
-}
 .centro-relleno-relleno-para-aviso p span{
     background: gray;
     color: white;
 }
-
 .encriptar{    
     color: white;
     background: #0a3871;
@@ -73,48 +34,14 @@ main{
     background: white;
     box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
-.derecha-relleno{
-    /* background: lightpink; */
-}
-.derecha-relleno-relleno-muneco-aviso{ /**********C*/
-    /* background: limegreen; */
-}
-.derecha-relleno-relleno-muneco{ /*******C css*/
-    /* background-color: lightblue;     */
-}
-.muneco{
-
-}
-.derecha-relleno-relleno-aviso{ 
-    /* background: lightpink; */
-}
-.derecha-relleno-relleno-aviso-superior{ 
-    /* background: lime; */
-}
-.derecha-relleno-relleno-aviso-superior p{
-    /* background: sandybrown; */
+.derecha-relleno-relleno-aviso-superior p{    
     color: #343A40;
 }
-.derecha-relleno-relleno-aviso-inferior{
-    /* background: lawngreen; */
-}
 .derecha-relleno-relleno-aviso-inferior p{
-    /* background: sandybrown; */
     color: #495057;
-}
-
-.derecha-relleno-resultado{    /**********C*/
-    /* background: limegreen; */
-}
-
-.derecha-relleno-relleno-para-texto{    
-    /* background: orange; */
 }
 .decifrado{    
     color: #495057;
-}
-.derecha-relleno-relleno-para-boton{
-    /* background: transparent; */
 }
 .bcopiar{
     border: 1px solid #0a3871;
@@ -124,36 +51,23 @@ main{
 .bcopiar:hover{
     background: #d8dfe8;
 }
-
-footer{   
-    /* background: blueviolet; */
-}
-
 footer div{        
     background: rgba(0, 0, 0,0.0);
     color:  rgba(255, 255, 255,0.0);  
 }
-
 footer div p{
     color: black;    
 }
-
 .enlace{
     cursor: pointer;
 }
-
 footer div:not(.contenedor,.radio_b,.dip):hover{
-    /* background: lightcoral;     */
     background: rgba(5, 27, 72, 0.5);            
     color: white;            
 }
-
 footer div:not(.contenedor,.radio_b,.dip):hover .enlace{
-    /* background: lightcoral;     */
-    /* filter: invert();           */
     content: url(imgs/github-mark-white.png);
 }
-
 div .footer-texto:hover{
     color: white;
 }

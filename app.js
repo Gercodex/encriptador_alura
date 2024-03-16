@@ -9,7 +9,7 @@ let cat = false;
 let catTemp = 0;
 
 function inicio(){
-    console.log("c");
+    // console.log("c");
     let areatexto = document.getElementById("texto-a-encriptar"); 
     if(window.screen.availWidth <= 375){        
         areatexto.addEventListener("input",tipear);
@@ -28,8 +28,8 @@ function masAltura(ide,maxh){
     let h = document.getElementById(ide);    
     let hc = h.clientHeight;
     let hs = h.scrollHeight;        
-    console.log(hs);
-    console.log(hc);    
+    // console.log(hs);
+    // console.log(hc);    
     // console.log("actual "+h.style.height);    
     if(hs != hc && hs <= maxh){                
         h.style.height = h.scrollHeight + "px";                
@@ -37,7 +37,7 @@ function masAltura(ide,maxh){
         h.style.height = maxh + "px";                
     }else{
         if(capturar() == ''){
-            console.log("vacio");
+            // console.log("vacio");
             h.style="height:''";
         }
     }
@@ -230,8 +230,21 @@ function temaCat(){
     catFrame();
 }
 
+function showNav(dist){
+    let nav = document.getElementById("idnav");
+    nav.style="top:"+dist+";";
+}
+
+function desactivatip(){
+    let tip = document.getElementById("idcajatip");
+    tip.style="display:none";
+    showNav("''");
+}
 
 inicio();
+window.setTimeout(desactivatip, 5000);
+showNav("-40px");
+
 
 
 
