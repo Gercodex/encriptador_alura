@@ -288,7 +288,7 @@ footer div a{
 .radio_b{    
     display: inline-block;    
     position: relative;
-    opacity: 0.3;
+    opacity: 1;
     padding: 0;
     margin: 0;
     width: 75px;   
