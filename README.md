@@ -15,6 +15,7 @@ Se ha seguido el modelo original diseñado y publicado en *Figma* por parte de *
 * Rodapie.
 * Funcionalidad selector de temas de color
 * Temas añadidos
+* Tooltip de inicio
 
 ## Errores
 
