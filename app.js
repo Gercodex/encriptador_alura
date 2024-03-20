@@ -1,43 +1,45 @@
 /*@utor: Gercodex ©*/
 
-/* Notas: Se puede reemplazar LlaveB por una combinación de dos o más letras siempre que no se repita, se puede usar combinaciones similares siempre que exista alguna diferencia*/
-/* A considerar: combinación o cambio de llaves por iteraciones, guardar secuencia de combinaciones de llaves; realizar aleatoriamente y guardar secuencia de llaves. Cambiar tamaño de area de texto dinámicamente conforme se escriba.*/
+/* Nota: Se puede reemplazar LlaveB o llaveA siempre que no se repitan sus elementos.*/
+/* A considerar: combinación o cambio de llaves por iteraciones, guardar secuencia de combinaciones de llaves; realizar aleatoriamente y guardar secuencia de llaves.*/
 
-const llaveA = ["ai","enter","imes","ober","ufat"];
+// const llaveA = ["ie","nte","oisv","onc","zkd","oi","erp","x","ous","z","jo","am", "os", "fl"];  /* personalizado descomentar */
+// const llaveB = ["ao","ie","i","oa","u","ei","e","ea","sx","men","a","o", "la m", "mu"];
+
+const llaveA = ["ai","enter","imes","ober","ufat"]; /*comentar para personalizado */
 const llaveB = ["a","e","i","o","u"];
 let cat = false;
 let catTemp = 0;
 
-function inicio(){
-    // console.log("c");
-    let areatexto = document.getElementById("texto-a-encriptar"); 
+function cajaDe(ide){
+    return document.querySelector("#"+ide);
+}
+
+function inicio(){    
+    let texto = cajaDe("texto-a-encriptar"); 
     if(window.screen.availWidth <= 375){        
-        areatexto.addEventListener("input",tipear);
+        texto.addEventListener("input",tipear);
         tipearResultado = ()=>{masAltura("texto-resultado",432);};
         tipear();
         tipearResultado();
         }else{
-        areatexto.removeEventListener("input",tipear);
+        texto.removeEventListener("input",tipear);
         tipearResultado = ()=>{};
-        areatexto.style="height:''";
-        document.getElementById("texto-resultado").style="height:''";
+        texto.style="height:''";
+        cajaDe("texto-resultado").style="height:''";
     }
 }
 
 function masAltura(ide,maxh){
-    let h = document.getElementById(ide);    
+    let h = cajaDe(ide);    
     let hc = h.clientHeight;
     let hs = h.scrollHeight;        
-    // console.log(hs);
-    // console.log(hc);    
-    // console.log("actual "+h.style.height);    
     if(hs != hc && hs <= maxh){                
         h.style.height = h.scrollHeight + "px";                
     }else if(hs > maxh){
         h.style.height = maxh + "px";                
     }else{
-        if(capturar() == ''){
-            // console.log("vacio");
+        if(capturar() == ''){            
             h.style="height:''";
         }
     }
@@ -51,40 +53,31 @@ function tipearResultado(){
         
 }
 
-function capturar(){ /*captura el texto del contenedor*/
-    return document.getElementById("texto-a-encriptar").value;
+function capturar(){ 
+    return cajaDe("texto-a-encriptar").value;
 }
 
 function escribir(texto){
-    document.getElementById("id-mensaje").style.display="none";
-    document.getElementById("id-resultado").style.display="block";
-    document.getElementById("texto-resultado").value = texto;
-
-    // console.log(window.screen.availWidth);
-    //let areatexto = document.getElementById("texto-a-encriptar"); /*cambia tamaño de area de texto*/        
-    // if((window.screen.availWidth <= 375) && (areatexto.value != '')){        
-    //     areatexto.style.height="624px"
-    // }    
+    cajaDe("id-mensaje").style.display="none";
+    cajaDe("id-resultado").style.display="block";
+    cajaDe("texto-resultado").value = texto;
 }
 
 function sinTexto(){
-    document.getElementById("id-mensaje").style.display="block";
-    document.getElementById("id-resultado").style.display="none";
-    document.getElementById("texto-resultado").value = "";
-    // if((window.screen.availWidth <= 375) && (document.getElementById("texto-a-encriptar").value == '')){
-    //     document.getElementById("texto-a-encriptar").style.height="235px"
-    // }
+    cajaDe("id-mensaje").style.display="block";
+    cajaDe("id-resultado").style.display="none";
+    cajaDe("texto-resultado").value = "";
 }
 
 function validar(texto){    
-    return /[^a-z !]/.test(texto); /*si es válido regresa si no termina*/
+    return /[^a-z !]/.test(texto); 
 }
 
-function convertirToArreglo(texto){    /*devuelve el arreglo de la cadena de texto*/
+function convertirToArreglo(texto){ 
     return texto.split('');
 }
 
-function getLlave(termino){ /*devuelve el término o llave*/ 
+function getLlave(termino){ 
     let res = "";
     let encriptadas = llaveA
     let aEncriptar = llaveB
@@ -102,38 +95,36 @@ function getLlave(termino){ /*devuelve el término o llave*/
     return res;
 }
 
-function getTermino(arreglo, indice, llave){
-    let res = -1;
+function intercambioDe(llave){
     let temp = [];
-    let contador = [];    
-    for(let i = 0; i < llave.length; i++){   /*recorre llaves */
-        temp = convertirToArreglo(llave[i]);  /*recorre determinada llave */      
-        for(let j = 0; j < temp.length; j++){   /*recorre caracteres de llave */
-            if(arreglo[indice + j] == temp[j]){  /*compara char a char de arreglo */                                                    
-                contador.push(temp[j]);     /* guarda coincidencias */ 
-                if(contador.length == temp.length){
-                    res = contador.toString().replace(/,/g, '');  /* = llave == mayor */                  
-                    contador = [];     // borra para testear siguiente                   
-                }  
-            }else{                   
-                break;      /* temina for si no coincide termino*/
-            }
-        }                
-    }
-    if(res.length > 0){   //modifica e imprime resultado
-        arreglo.splice(indice,res.length,getLlave(res));
-    }
-    // console.log(arreglo);
-    return;
-}
-
-function encAmbivalente(llave){   //recorre cada letra del area de texto    
+    let tempi = [];
+    let resTemp = "";
     let capturado = capturar();
-    if(capturado != ""){
+     if(capturado != ""){
         if(!validar(capturado)){
             let arreglo = convertirToArreglo(capturado);
-            for(let i = 0; i < arreglo.length; i++){
-                getTermino(arreglo,i,llave);        
+            for(let i = 0; i < arreglo.length; i++){                                
+                for(let k = 0; k < llave.length; k++){
+                    temp = convertirToArreglo(llave[k]);                   
+                    if(!llave[k].indexOf(arreglo[i])){                    
+                        for(let j = 0; j < temp.length; j++){
+                            if(arreglo[i + j] == temp[j]){
+                                tempi.push(arreglo[i + j]);                               
+                            }
+                        }
+                        tempi = tempi.toString().replace(/,/g,'');
+                        if(tempi == llave[k]){                            
+                            if(resTemp.length < tempi.length){
+                                resTemp = tempi;
+                            }
+                        }                        
+                        tempi = [];                                                
+                    }
+                }            
+                if(resTemp.length > 0){
+                    arreglo.splice(i,resTemp.length,getLlave(resTemp));                                        
+                }    
+                resTemp = "";
             }
             escribir(arreglo.toString().replace(/,/g,''));
         }else{
@@ -145,32 +136,32 @@ function encAmbivalente(llave){   //recorre cada letra del area de texto
     return;
 }
 
-function desencriptar(){
-    encAmbivalente(llaveA);        
-    tipearResultado();
-    return;
-}
-
 function encriptar(){
-    encAmbivalente(llaveB);  
+    intercambioDe(llaveB);  
     tipearResultado();   
     return;
 }
 
-function copiarAPortapapeles(){ /* *********** <- "Basado en w3s. " +++++++++++ */
-    let resultado = document.getElementById("texto-resultado");    
+function desencriptar(){
+    intercambioDe(llaveA);        
+    tipearResultado();
+    return;
+}
+
+function copiarAPortapapeles(){ 
+    let resultado = cajaDe("texto-resultado");    
     resultado.select();    
     navigator.clipboard.writeText(resultado.value);
     alert("Copiado");
 }
 
 function cambiar(tema){
-    let doc = document.getElementById("colores-tema");
+    let doc = cajaDe("colores-tema");
     doc.setAttribute("href",tema+".css");    
 }
 
 function catFrameA(){
-    let frame = document.getElementById("catImg");
+    let frame = cajaDe("catImg");
     let aleatorio;
     while(1){
         aleatorio = parseInt(Math.random() * 3);            
@@ -186,30 +177,25 @@ function catFrameA(){
     }else if(aleatorio == 2){
         frame.style="content: url(imgs/gatoCColor.png)";
     }
-    
-    // console.log(aleatorio);
-    // let frame = document.getElementById("catImg");
-    // frame.style="content: url(imgs/gatoC.png)";
 }
 
 function catFrame(){
     cat = true;
-    let ba = document.getElementById("idencriptar");
+    let ba = cajaDe("idencriptar");
     ba.addEventListener("click", catFrameA);    
-    let bb = document.getElementById("idesencriptar");
+    let bb = cajaDe("idesencriptar");
     bb.addEventListener("click", catFrameA);
-    let bc = document.getElementById("idcopiar");
+    let bc = cajaDe("idcopiar");
     bc.addEventListener("click", catFrameA);
 }
 function catFrameRemove(){
     if(cat == true){
-        let ba = document.getElementById("idencriptar");
+        let ba = cajaDe("idencriptar");
         ba.removeEventListener("click", catFrameA);    
-        let bb = document.getElementById("idesencriptar");
+        let bb = cajaDe("idesencriptar");
         bb.removeEventListener("click", catFrameA);
-        let bc = document.getElementById("idcopiar");
-        bc.removeEventListener("click", catFrameA);
-        // alert("limpio");
+        let bc = cajaDe("idcopiar");
+        bc.removeEventListener("click", catFrameA);        
         cat = false;
     }
 }
@@ -231,12 +217,12 @@ function temaCat(){
 }
 
 function showNav(dist){
-    let nav = document.getElementById("idnav");
+    let nav = cajaDe("idnav");
     nav.style="top:"+dist+";";
 }
 
 function desactivatip(){
-    let tip = document.getElementById("idcajatip");
+    let tip = cajaDe("idcajatip");
     tip.style="display:none";
     showNav("''");
 }
