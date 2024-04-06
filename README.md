@@ -20,6 +20,8 @@ Se ha seguido el modelo original diseñado y publicado en *Figma* por parte de *
 ## Errores
 
 * Función inicio puede dar mensajes de error cuando se cambian a distintos modos de visualización.
+* Deja pasar espacios.
+* Reconoce nueva linea como caracter especial.
 
 ## Notas
 
@@ -50,7 +52,9 @@ En resolucio menor a 375px el área de texto se incrementa al tamaño conforme s
 ![temacat](https://github.com/Gercodex/encriptador_alura/assets/157858339/cf3518e3-3e64-483b-8cad-ea7fec032349)
 
 
+Contacto Linkedin : https://www.linkedin.com/in/gerardo-gutierrez-rodriguez-37629a196/ 
 
+Sitio de encriptador : https://gercodex.github.io/encriptador_alura/
 
 
 
